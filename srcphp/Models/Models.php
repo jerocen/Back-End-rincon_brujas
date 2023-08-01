@@ -20,7 +20,7 @@
 
         public function __construct()
         {
-            $cc = new  Conexion("web", "localhost", "root", "");
+            $cc = new  Conexion("rincon_de_las_brujas", "localhost", "Jeronimo", "jeronimo123456");
             self::$pdo = $cc->getPDO();
         }
         public function create(array $obj)
@@ -41,7 +41,7 @@
             $valores .= " )";
 
             $stmt = self::$pdo->prepare("INSERT INTO $this->table   $campos VALUES  $valores");
-
+            
             foreach ($obj as $prop => $val) {
                 $stmt->bindValue(":$prop", $val);
             }
@@ -80,7 +80,7 @@
                 $stmt->bindParam(":id",$id);
                 $stmt->execute();
                 }
-            catch (Exception $e) {
+            catch (\Exception $e) {
                 return $e;
             }
         }
@@ -93,7 +93,7 @@
                 $stmt->bindParam(":value",$value);
                 $stmt->execute();
                 }
-            catch (Exception $e) {
+            catch (\Exception $e) {
                 return $e;
             }
         }
@@ -131,9 +131,6 @@
 
             return  $resultados;
         }
-
-
-
-
-
+        /*-----------------------------------------------------------------------------------*/
+        
     }

@@ -21,7 +21,7 @@ class Table
 }
     static function query($query)
     {
-        $cc = new  Conexion("web", "localhost", "root", "");
+        $cc = new  Conexion("rincon_de_las_brujas", "localhost", "Jeronimo", "jeronimo123456");
         self::$pdo = $cc->getPDO();
         $stmt = self::$pdo->query($query);
         $resultados = $stmt->fetchAll(PDO::FETCH_OBJ);

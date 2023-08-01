@@ -88,4 +88,10 @@ class UserController
     {
         User::delete($id);
     }
+
+    function prueba()
+    {
+        $r = new Success("Hola");
+        $r-> send();
+    }
 }
